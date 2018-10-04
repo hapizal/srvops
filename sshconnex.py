@@ -6,7 +6,7 @@
 ########################################################################
 
 import pexpect
-import sys,re
+import sys,re,os
 
 def grs(n,kar):
     for i in xrange(0,n): sys.stdout.write(kar);sys.stdout.flush()
@@ -38,29 +38,29 @@ with open(file_) as f:
             conn.sendline(passw)
             print "Logged In to ",ip
             grs(80,'-')
-            conn.expect('>')
+            conn.expect(["~]","~>"],timeout=3)
             print 'Execute Command :',comm
             grs(80,'-')
             conn.sendline(comm)
-            conn.expect('>')
-            filename='test-%s.txt'%ip
+            conn.expect(["~]","~>"],timeout=3)
+            filename='/var/tmp/ptest-%s.txt'%ip
             files=open(filename,'w')
+            #print conn.before
             files.write(conn.before)
             files.close()
             #print conn.before
-            filexx=conn.before
+            #filexx=conn.before
             #conn.close()
             
             for linet in open(filename):
                 if not comm in linet:
                     if not usr in linet:
-                        sys.stdout.write(linet); sys.stdout.flush()
+                        sys.stdout.write("> %s"%linet); sys.stdout.flush()
             
             conn.close()
-
+            os.remove(filename)
         except pexpect.TIMEOUT:
             print("failed")
         print '\r'
         line=f.readline()
         cnt+=1
-       
