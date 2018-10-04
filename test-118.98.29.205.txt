@@ -1,6 +1,0 @@
- free -m
-             total       used       free     shared    buffers     cached
-Mem:         11864      11781         82          0        744       7994
--/+ buffers/cache:       3042       8821
-Swap:        12285          0      12285
-yniptv@testbed-AD-2:~
