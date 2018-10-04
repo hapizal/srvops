@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #########################################################################
-# For execute many servers using ssh connection
+# For execute commands to  many servers using ssh connection
 # file list of the server info :
 # ip<space>username<space>password<space>port<space>rootpassword
 ########################################################################
