@@ -1,6 +1,0 @@
- free -m
-             total       used       free     shared    buffers     cached
-Mem:         15851        535      15316          0         16        147
--/+ buffers/cache:        370      15480
-Swap:         8189          0       8189
-test@JUMP:/
