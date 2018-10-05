@@ -1,2 +1,2 @@
 # srvops
-server operations
+server operations, automations
